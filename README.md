@@ -1139,7 +1139,6 @@ item_price_bins = heroes_pymoli_pd.groupby("Item Name").mean()
 item_sum_bins = heroes_pymoli_pd.groupby("Item Name").sum()
 item_popularity["Item Price"] = item_price_bins["Price"]
 item_popularity["Total Purchase Value"] = item_sum_bins["Price"]
-item_popularity["Item ID"] = heroes_pymoli_pd["Item ID"]
 item_popularity = item_popularity.sort_values(["Purchase Count"], ascending=False)
 item_popularity["Item Price"] = item_popularity["Item Price"].map("${0:,.2f}".format)
 item_popularity["Total Purchase Value"] = item_popularity["Total Purchase Value"].map("${0:,.2f}".format)
